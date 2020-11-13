@@ -1,0 +1,29 @@
+
+<div>
+<form [formGroup]="itemForm" (ngSubmit)="onSubmit()" >
+
+    <label for="">Titulo</label>
+        <input type="text" formControlName="title" [(ngModel)]="item.title">
+        <div *ngIf="title.invalid && (title.dirty || title.touched)">
+            <div *ngIf="title.errors.required"> es requerido</div>
+            <div *ngIf="title.errors.minlength"> debe tener al menos 3 caracteres</div>
+        </div>
+    <label for="">URL de Acceso</label>
+        <input type="text" formControlName="accessURL" [(ngModel)]="item.accessURL" >
+        <div *ngIf="accessURL.invalid && (accessURL.dirty || accessURL.touched)">
+            <div *ngIf="accessURL.errors.required"> es requerido</div>
+            <div *ngIf="accessURL.errors.minlength"> debe tener al menos 3 caracteres</div>
+        </div>
+    <label for="">Descripcion</label>
+        <input type="text" formControlName="_about" [(ngModel)]="item._about" >
+        <div *ngIf="_about.invalid && (accessURL.dirty || _about.touched)">
+            <div *ngIf="_about.errors.required"> es requerido</div>
+            <div *ngIf="_about.errors.minlength"> debe tener al menos 3 caracteres</div>
+        </div>
+        
+    <button type="submit" [disabled]="!itemForm.valid">Guardar</button>
+</form>
+</div>
+<div>
+    <button type="button" [routerLink]="['/listado']">Volver</button>
+</div>
