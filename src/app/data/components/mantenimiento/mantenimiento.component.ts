@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
-
 @Component({
   selector: 'app-mantenimiento',
   templateUrl: './mantenimiento.component.html',
@@ -16,7 +15,7 @@ export class MantenimientoComponent implements OnInit {
   public itemForm: FormGroup;
 
 
-  constructor( private router: Router , private paramUri : ActivatedRoute ) { 
+  constructor( private router: Router , private paramUri : ActivatedRoute) { 
     this.itemForm = this.itemCreateForm();
   }
 

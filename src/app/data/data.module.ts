@@ -6,6 +6,7 @@ import { ListadoComponent } from './components/listado/listado.component';
 import { MantenimientoComponent } from './components/mantenimiento/mantenimiento.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
+
 import {TableModule} from 'primeng/table';
 import {ToastModule} from 'primeng/toast';
 import {CalendarModule} from 'primeng/calendar';
@@ -17,6 +18,8 @@ import {ButtonModule} from 'primeng/button';
 import {DropdownModule} from 'primeng/dropdown';
 import {ProgressBarModule} from 'primeng/progressbar';
 import {InputTextModule} from 'primeng/inputtext';
+import {PanelModule} from 'primeng/panel';
+
 
 @NgModule({
   declarations: [ListadoComponent, MantenimientoComponent],
@@ -34,6 +37,7 @@ import {InputTextModule} from 'primeng/inputtext';
     DropdownModule,
     ProgressBarModule,
     InputTextModule,
+    PanelModule,
     ReactiveFormsModule
   ]
 })
