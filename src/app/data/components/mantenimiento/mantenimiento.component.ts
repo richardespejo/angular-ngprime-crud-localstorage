@@ -12,6 +12,7 @@ export class MantenimientoComponent implements OnInit {
   id : string; 
   data : any[] = [];
   item : any = {};
+  tittle: string;
   public itemForm: FormGroup;
 
 
@@ -21,6 +22,11 @@ export class MantenimientoComponent implements OnInit {
 
   ngOnInit() {
     this.id = this.paramUri.snapshot.paramMap.get('id');
+    if(this.id==='n'){
+      this.tittle="Nuevo registro";
+    }else{
+      this.tittle= `Actualizar registro  ${this.id} `;
+    }
     this.data = JSON.parse(localStorage.getItem('data')); 
     this.getItem();         
   }

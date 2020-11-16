@@ -1,41 +1,49 @@
-<div class="p-grid">
-    <div class="p-fluid">
-    <form [formGroup]="itemForm" (ngSubmit)="onSubmit()" >
+<div class="p-d-container">
+    <div class="p-grid">
+        <div class="p-col"></div>
+        <div class="p-col">
+        <h2>{{ tittle }}</h2> 
+        <hr>   
+        <form [formGroup]="itemForm" (ngSubmit)="onSubmit()" >
 
-        <div class="p-field">
-            <label for="titulo">Titulo</label>
-            <input pInputText  id="titulo" type="text" formControlName="title" [(ngModel)]="item.title" size="100">
-            <div *ngIf="title.invalid && (title.dirty || title.touched)" class="p-invalid">
-                <div *ngIf="title.errors.required"> es requerido</div>
-                <div *ngIf="title.errors.minlength"> debe tener al menos 3 caracteres</div>
+            <div class="p-field">
+                <label for="titulo">Titulo</label>
+                <input pInputText  id="titulo" type="text" formControlName="title" [(ngModel)]="item.title" size="100">
+                <div *ngIf="title.invalid && (title.dirty || title.touched)" class="p-invalid">
+                    <div *ngIf="title.errors.required"> es requerido</div>
+                    <div *ngIf="title.errors.minlength"> debe tener al menos 3 caracteres</div>
+                </div>
             </div>
-        </div>
 
-        <div class="p-field">
-        <label for="accessURL">URL de Acceso</label>
-            <input id="accessURL" pInputText  type="text" formControlName="accessURL" [(ngModel)]="item.accessURL" size="100">
-            <div *ngIf="accessURL.invalid && (accessURL.dirty || accessURL.touched)" class="p-invalid">
-                <div *ngIf="accessURL.errors.required"> es requerido</div>
-                <div *ngIf="accessURL.errors.minlength"> debe tener al menos 3 caracteres</div>
+            <div class="p-field">
+            <label for="accessURL">URL de Acceso</label>
+                <input id="accessURL" pInputText  type="text" formControlName="accessURL" [(ngModel)]="item.accessURL" size="100">
+                <div *ngIf="accessURL.invalid && (accessURL.dirty || accessURL.touched)" class="p-invalid">
+                    <div *ngIf="accessURL.errors.required"> es requerido</div>
+                    <div *ngIf="accessURL.errors.minlength"> debe tener al menos 3 caracteres</div>
+                </div>
             </div>
-        </div>
 
-        <div class="p-field">
-        <label for="descipcion">Descripcion</label>
-            <input id="descripcion" pInputText  type="text" formControlName="_about" [(ngModel)]="item._about" size="100">
-            <div *ngIf="_about.invalid && (accessURL.dirty || _about.touched)" class="p-invalid">
-                <div *ngIf="_about.errors.required"> es requerido</div>
-                <div *ngIf="_about.errors.minlength"> debe tener al menos 3 caracteres</div>
+            <div class="p-field">
+            <label for="descipcion">Descripcion</label>
+                <input id="descripcion" pInputText  type="text" formControlName="_about" [(ngModel)]="item._about" size="100">
+                <div *ngIf="_about.invalid && (accessURL.dirty || _about.touched)" class="p-invalid">
+                    <div *ngIf="_about.errors.required"> es requerido</div>
+                    <div *ngIf="_about.errors.minlength"> debe tener al menos 3 caracteres</div>
+                </div>
             </div>
+            <div class="p-field">    
+                <button pButton type="submit"  [disabled]="!itemForm.valid" label="Guardar" icon="pi pi-save" class="p-button-info" badge="8" badgeClass="p-badge-info"></button>
+            </div>
+            <div class="p-field">
+                <button pButton type="button"  [routerLink]="['/listado']" label="Volver" icon="pi pi-angle-double-left" class="p-button-danger" badge="8" badgeClass="p-badge-info"></button>
+
+            </div>    
+        </form>
         </div>
-        <div class="p-field">    
-            <button pButton type="submit"  [disabled]="!itemForm.valid" label="Guardar" icon="pi pi-save" class="p-button-info" badge="8" badgeClass="p-badge-info"></button>
-        </div>    
-    </form>
-    </div>
 
     
-</div>
-<div class="p">
-    <button pButton type="button"  [routerLink]="['/listado']" label="Volver" icon="pi pi-angle-double-left" class="p-button-info" badge="8" badgeClass="p-badge-info"></button>
+        <div class="p-col"></div>
+
+    </div>
 </div>
